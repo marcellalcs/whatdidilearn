@@ -20,7 +20,6 @@ class LearnedItemRepositoryTest {
 
     lateinit var repository: LearnedItemRepository
 
-
     @Test
     fun `Given itens stored when recover them then should return same form database`() {
         val mockedItems = mockDatabase()
@@ -31,21 +30,6 @@ class LearnedItemRepositoryTest {
 
         assertEquals(result.value, mockedItems)
     }
-//
-//    @Test
-//    fun `Given new learned item, when save it, then should be stored`() {
-//        val newItem = LearnedItem(
-//            title = "item",
-//            description = "description",
-//            understandingLevel = UnderstandingLevel.LOW
-//        )
-//        repository = LearnedItemRepository(dao)
-//
-//
-//        repository.addNewItem(newItem)
-//
-//        verify(dao).insert(newItem)
-//    }
 
     private fun mockDatabase(): List<LearnedItem> {
         return listOf(
